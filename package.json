@@ -1,0 +1,29 @@
+{
+  "name": "osd600learninglab",
+  "version": "1.0.0",
+  "description": "Learning Lab",
+  "main": "seneca.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint *.js",
+    "test": "npm run -s lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dangkhue27@github.com/dangkhue27/OSD600LearningLab.git"
+  },
+  "keywords": [
+    "learning",
+    "lab"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dangkhue27/OSD600LearningLab/issues"
+  },
+  "homepage": "https://github.com/dangkhue27/OSD600LearningLab#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
