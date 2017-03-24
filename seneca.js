@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 // [INFO] See discussion of node.js exports here:
 // https://www.sitepoint.com/understanding-module-exports-exports-node-js/
 
@@ -7,7 +8,19 @@
  */
 exports.isValidEmail = function (email) {
   // TODO: needs to be implemented
-  return email.includes('@');
+  if (email) {
+    /*
+    pattern taken from here
+    http://jsfiddle.net/ghvj4gy9/embedded/result,js/
+    */
+    const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (pattern.test(email)) {
+      if (email.includes('myseneca.ca') || email.includes('senecacollege.ca') || email.includes('senecac.on.ca')) {
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
 /**
@@ -16,5 +29,8 @@ exports.isValidEmail = function (email) {
  */
 exports.formatSenecaEmail = function (name) {
   // TODO: needs to be implemented
-  return name.replace(' ', '').concat('@myseneca.ca');
+  if (name) {
+    return name.replace(' ', '').concat('@myseneca.ca');
+  }
+  return '';
 };
