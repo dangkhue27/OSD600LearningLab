@@ -43,6 +43,18 @@ app.get('/format/:name', (req, res) => {
   });
 });
 
+// GET http://localhost:3000/healthcheck
+app.get('/healthcheck', (req, res) => {
+  const time = process.uptime();
+
+  // Return a JSON formatted response with the given name
+  // formatted as a valid email address.
+  res.json({
+    uptime: time,
+    unit: 'seconds',
+  });
+});
+
 // Start our web server on port 3000
 app.listen(port, () => {
   console.log('Server started on http://localhost:' + port);
